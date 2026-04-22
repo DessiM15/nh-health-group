@@ -1,34 +1,37 @@
-const steps = [
-  {
-    number: "1",
-    title: "Request Your Free Review",
-    description:
-      "Fill out the short form below. No commitment, no pressure \u2014 just information.",
-  },
-  {
-    number: "2",
-    title: "We Compare Your Options",
-    description:
-      "Robert reviews your current coverage and pulls quotes from multiple carriers to find you real savings.",
-  },
-  {
-    number: "3",
-    title: "You Choose \u2014 Zero Pressure",
-    description:
-      "We walk you through what we found. You decide if and when you want to switch. Simple as that.",
-  },
-];
+"use client";
+
+import { useTranslation } from "@/lib/useTranslation";
 
 export default function HowItWorks() {
+  const { t } = useTranslation();
+
+  const steps = [
+    {
+      number: "1",
+      title: t("howItWorks.step1Title"),
+      description: t("howItWorks.step1Description"),
+    },
+    {
+      number: "2",
+      title: t("howItWorks.step2Title"),
+      description: t("howItWorks.step2Description"),
+    },
+    {
+      number: "3",
+      title: t("howItWorks.step3Title"),
+      description: t("howItWorks.step3Description"),
+    },
+  ];
+
   return (
     <section id="how-it-works" className="bg-[#F8FAFD] py-20 px-6 scroll-mt-20">
       {/* Header */}
       <div className="max-w-3xl mx-auto text-center mb-14">
         <span className="font-display font-medium text-[0.8rem] uppercase tracking-widest text-[#C9A040]">
-          The Process
+          {t("howItWorks.eyebrow")}
         </span>
         <h2 className="font-display font-extrabold text-[#0F3F7A] text-3xl md:text-4xl mt-3">
-          A Free Review in 3 Simple Steps
+          {t("howItWorks.heading")}
         </h2>
       </div>
 

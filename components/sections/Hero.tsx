@@ -1,14 +1,17 @@
 "use client";
 
 import { ShieldCheck } from "lucide-react";
-
-const trustItems = [
-  "Multi-Carrier Access",
-  "No Cost to You",
-  "PHCS PPO Network",
-];
+import { useTranslation } from "@/lib/useTranslation";
 
 export default function Hero() {
+  const { t } = useTranslation();
+
+  const trustItems = [
+    t("hero.trust1"),
+    t("hero.trust2"),
+    t("hero.trust3"),
+  ];
+
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background video */}
@@ -66,7 +69,7 @@ export default function Hero() {
           className="font-display font-extrabold text-white leading-tight mb-4 opacity-0 animate-[fadeUp_0.6s_ease_0.2s_forwards]"
           style={{ fontSize: "clamp(2.2rem, 4.5vw, 3.5rem)" }}
         >
-          Affordable Group Health Plans for Texas Businesses.
+          {t("hero.headline")}
         </h1>
 
         {/* Gold rule */}
@@ -74,9 +77,7 @@ export default function Hero() {
 
         {/* Subheadline */}
         <p className="font-body text-white/80 text-lg max-w-xl mx-auto mb-8 opacity-0 animate-[fadeUp_0.6s_ease_0.4s_forwards]">
-          New Horizons Benefits Group helps employers find the right
-          coverage for their teams — with access to one of the largest PPO
-          networks in the country.
+          {t("hero.subheadline")}
         </p>
 
         {/* Primary CTA */}
@@ -84,7 +85,7 @@ export default function Hero() {
           href="#lead-form"
           className="inline-block w-full sm:w-auto bg-[#C9A040] text-[#0F3F7A] font-bold text-lg px-10 py-4 rounded-xl hover:bg-[#A07C20] transition-colors duration-200 shadow-[0_4px_20px_rgba(201,160,64,0.4)] mb-4 opacity-0 animate-[fadeUp_0.6s_ease_0.5s_forwards] text-center"
         >
-          Get My Free Savings Review →
+          {t("hero.cta")}
         </a>
 
         {/* Trust strip */}
@@ -94,7 +95,7 @@ export default function Hero() {
               key={item}
               className="flex items-center gap-1.5 text-sm text-white/75 font-body"
             >
-              <span className="text-[#C9A040]">✓</span>
+              <span className="text-[#C9A040]">{"\u2713"}</span>
               {item}
             </span>
           ))}

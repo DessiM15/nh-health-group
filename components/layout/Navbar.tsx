@@ -3,17 +3,21 @@
 import { useState, useEffect } from "react";
 import Image from "next/image";
 import { Menu, X } from "lucide-react";
+import { useLanguage } from "@/lib/LanguageContext";
+import { useTranslation } from "@/lib/useTranslation";
 
-const navLinks = [
-  { label: "Coverage", href: "#coverage" },
-  { label: "Calculator", href: "/calculator" },
-  { label: "How It Works", href: "#how-it-works" },
-  { label: "Reviews", href: "#testimonials" },
+const navLinkKeys = [
+  { key: "navbar.coverage", href: "#coverage" },
+  { key: "navbar.calculator", href: "/calculator" },
+  { key: "navbar.howItWorks", href: "#how-it-works" },
+  { key: "navbar.reviews", href: "#testimonials" },
 ];
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
+  const { lang, setLang } = useLanguage();
+  const { t } = useTranslation();
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 50);
@@ -22,6 +26,46 @@ export default function Navbar() {
   }, []);
 
   const closeMobile = () => setMobileOpen(false);
+
+  const LanguageToggle = () => (
+    <div className="flex items-center gap-1.5 text-sm font-display font-medium">
+      <button
+        onClick={() => setLang("en")}
+        className={`transition-colors duration-300 ${
+          lang === "en"
+            ? scrolled || mobileOpen
+              ? "text-[#0F3F7A] font-bold"
+              : "text-white font-bold"
+            : scrolled || mobileOpen
+              ? "text-[#334155]/50 hover:text-[#334155]"
+              : "text-white/50 hover:text-white"
+        }`}
+      >
+        EN
+      </button>
+      <span
+        className={`transition-colors duration-300 ${
+          scrolled || mobileOpen ? "text-[#334155]/30" : "text-white/30"
+        }`}
+      >
+        |
+      </span>
+      <button
+        onClick={() => setLang("es")}
+        className={`transition-colors duration-300 ${
+          lang === "es"
+            ? scrolled || mobileOpen
+              ? "text-[#0F3F7A] font-bold"
+              : "text-white font-bold"
+            : scrolled || mobileOpen
+              ? "text-[#334155]/50 hover:text-[#334155]"
+              : "text-white/50 hover:text-white"
+        }`}
+      >
+        ES
+      </button>
+    </div>
+  );
 
   return (
     <nav
@@ -61,7 +105,7 @@ export default function Navbar() {
 
         {/* Center: Desktop nav links */}
         <div className="hidden md:flex items-center gap-8">
-          {navLinks.map(({ label, href }) => (
+          {navLinkKeys.map(({ key, href }) => (
             <a
               key={href}
               href={href}
@@ -69,18 +113,22 @@ export default function Navbar() {
                 scrolled ? "text-[#334155]" : "text-white/90"
               }`}
             >
-              {label}
+              {t(key)}
             </a>
           ))}
         </div>
 
-        {/* Right: CTA + Mobile toggle */}
+        {/* Right: Language Toggle + CTA + Mobile toggle */}
         <div className="flex items-center gap-4">
+          <div className="hidden md:block">
+            <LanguageToggle />
+          </div>
+
           <a
             href="#lead-form"
             className="hidden sm:inline-block bg-[#C9A040] text-[#0F3F7A] font-semibold rounded-lg px-5 py-2 text-sm hover:bg-[#A07C20] transition-colors duration-200"
           >
-            Get a Group Quote
+            {t("navbar.cta")}
           </a>
 
           {/* Hamburger — mobile only */}
@@ -106,14 +154,17 @@ export default function Navbar() {
       {/* Mobile dropdown */}
       {mobileOpen && (
         <div className="md:hidden bg-white border-t border-[#CBD5E1] px-6 pb-5 pt-3 flex flex-col gap-4">
-          {navLinks.map(({ label, href }) => (
+          <div className="flex justify-center py-1">
+            <LanguageToggle />
+          </div>
+          {navLinkKeys.map(({ key, href }) => (
             <a
               key={href}
               href={href}
               onClick={closeMobile}
               className="font-display font-medium text-sm text-[#334155] hover:text-[#C9A040] transition-colors"
             >
-              {label}
+              {t(key)}
             </a>
           ))}
           <a
@@ -121,7 +172,7 @@ export default function Navbar() {
             onClick={closeMobile}
             className="bg-[#C9A040] text-[#0F3F7A] font-semibold rounded-lg px-5 py-2.5 text-sm text-center hover:bg-[#A07C20] transition-colors duration-200"
           >
-            Get a Group Quote
+            {t("navbar.cta")}
           </a>
         </div>
       )}

@@ -1,42 +1,44 @@
-import Image from "next/image";
+"use client";
 
-const testimonials = [
-  {
-    name: "David K.",
-    role: "Restaurant Owner, Plano TX",
-    avatar:
-      "https://ui-avatars.com/api/?name=David+K&background=1A5FAF&color=C9A040&bold=true&size=80",
-    quote:
-      "I was spending a fortune on group coverage for my 12 employees. Robert found us a level-funded plan that saved us over $2,000 a month. Same great coverage.",
-  },
-  {
-    name: "Sarah M.",
-    role: "Tech Startup Founder, Austin TX",
-    avatar:
-      "https://ui-avatars.com/api/?name=Sarah+M&background=1A5FAF&color=C9A040&bold=true&size=80",
-    quote:
-      "As a growing startup, I needed benefits that would help me attract talent without killing our runway. Robert set us up with a plan that works for everyone.",
-  },
-  {
-    name: "Robert L.",
-    role: "Construction Company Owner, Dallas TX",
-    avatar:
-      "https://ui-avatars.com/api/?name=Robert+L&background=1A5FAF&color=C9A040&bold=true&size=80",
-    quote:
-      "Managing benefits for 30+ guys in the field was a nightmare. New Horizons simplified everything and actually saved us money in the process.",
-  },
-];
+import Image from "next/image";
+import { useTranslation } from "@/lib/useTranslation";
 
 export default function Testimonials() {
+  const { t } = useTranslation();
+
+  const testimonials = [
+    {
+      name: "David K.",
+      role: t("testimonials.t1Role"),
+      avatar:
+        "https://ui-avatars.com/api/?name=David+K&background=1A5FAF&color=C9A040&bold=true&size=80",
+      quote: t("testimonials.t1Quote"),
+    },
+    {
+      name: "Sarah M.",
+      role: t("testimonials.t2Role"),
+      avatar:
+        "https://ui-avatars.com/api/?name=Sarah+M&background=1A5FAF&color=C9A040&bold=true&size=80",
+      quote: t("testimonials.t2Quote"),
+    },
+    {
+      name: "Robert L.",
+      role: t("testimonials.t3Role"),
+      avatar:
+        "https://ui-avatars.com/api/?name=Robert+L&background=1A5FAF&color=C9A040&bold=true&size=80",
+      quote: t("testimonials.t3Quote"),
+    },
+  ];
+
   return (
     <section id="testimonials" className="bg-[#F1F5F9] py-20 px-6 scroll-mt-20">
       {/* Header */}
       <div className="max-w-3xl mx-auto text-center mb-14">
         <span className="font-display font-medium text-[0.8rem] uppercase tracking-widest text-[#C9A040]">
-          What Business Owners Say
+          {t("testimonials.eyebrow")}
         </span>
         <h2 className="font-display font-extrabold text-[#0F3F7A] text-3xl md:text-4xl mt-3">
-          Real Businesses. Real Results.
+          {t("testimonials.heading")}
         </h2>
       </div>
 
@@ -50,7 +52,7 @@ export default function Testimonials() {
           >
             {/* Stars */}
             <div className="text-[#C9A040] text-sm mb-3 tracking-wide">
-              ★★★★★
+              {"\u2605\u2605\u2605\u2605\u2605"}
             </div>
 
             {/* Decorative quote mark */}
@@ -58,7 +60,7 @@ export default function Testimonials() {
               className="absolute top-3 left-4 font-serif text-[5rem] leading-none text-[#C9A040] opacity-20 select-none pointer-events-none"
               aria-hidden="true"
             >
-              &ldquo;
+              {"\u201c"}
             </span>
 
             {/* Quote */}

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Plus_Jakarta_Sans, Lora, IBM_Plex_Mono } from "next/font/google";
 import "./globals.css";
+import { LanguageProvider } from "@/lib/LanguageContext";
 
 const plusJakartaSans = Plus_Jakarta_Sans({
   subsets: ["latin"],
@@ -39,8 +40,11 @@ export default function RootLayout({
     <html
       lang="en"
       className={`${plusJakartaSans.variable} ${lora.variable} ${ibmPlexMono.variable}`}
+      suppressHydrationWarning
     >
-      <body className="bg-[#F8FAFD] font-body antialiased">{children}</body>
+      <body className="bg-[#F8FAFD] font-body antialiased">
+        <LanguageProvider>{children}</LanguageProvider>
+      </body>
     </html>
   );
 }

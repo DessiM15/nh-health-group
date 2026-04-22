@@ -1,4 +1,7 @@
+"use client";
+
 import Image from "next/image";
+import { useTranslation } from "@/lib/useTranslation";
 
 const socials = [
   {
@@ -24,6 +27,8 @@ const socials = [
 ];
 
 export default function Footer() {
+  const { t } = useTranslation();
+
   return (
     <footer className="bg-[#0A2850]">
       {/* Gold top rule */}
@@ -43,7 +48,7 @@ export default function Footer() {
             New Horizons Benefits Group
           </p>
           <p className="text-white/60 text-sm mt-1">
-            Robert | Independent Agent
+            Robert | {t("footer.independentAgent")}
           </p>
           <p className="text-white/50 text-sm mt-1">
             202 S. Coleman Suite 200, Prosper, TX 75078
@@ -56,7 +61,7 @@ export default function Footer() {
         {/* Center: Social */}
         <div className="flex flex-col items-center md:items-start">
           <p className="text-[#C9A040]/80 text-sm uppercase tracking-widest mb-3">
-            Connect
+            {t("footer.connect")}
           </p>
           <div className="flex items-center gap-4">
             {socials.map(({ label, href, path }) => (
@@ -84,13 +89,13 @@ export default function Footer() {
         {/* Right: Licensing */}
         <div className="flex flex-col items-center md:items-start">
           <span className="inline-block border border-[#C9A040]/40 text-[#C9A040]/80 text-sm px-3 py-1 rounded-full mb-3">
-            Licensed in TX · LA · OK · CA
+            {t("footer.licensed")}
           </span>
           <p className="text-white/60 text-sm">
-            Multi-Carrier Independent Agency
+            {t("footer.agencyType")}
           </p>
           <p className="text-white/50 text-sm mt-1">
-            Serving Texans Since Day One
+            {t("footer.tagline")}
           </p>
         </div>
       </div>
@@ -98,12 +103,10 @@ export default function Footer() {
       {/* Bottom bar */}
       <div className="max-w-6xl mx-auto px-6 mt-8 pt-6 border-t border-white/10 pb-8 text-center md:text-left">
         <p className="text-white/40 text-sm">
-          © 2026 New Horizons Benefits Group. All rights reserved.
+          {t("footer.copyright")}
         </p>
         <p className="text-white/30 text-sm mt-1">
-          New Horizons Benefits is an independent insurance agency. Products and
-          availability vary by state. This site does not constitute an offer of
-          insurance.
+          {t("footer.disclaimer")}
         </p>
       </div>
     </footer>

@@ -1,8 +1,14 @@
+"use client";
+
+import { useTranslation } from "@/lib/useTranslation";
+
 export default function StatsBar() {
+  const { t } = useTranslation();
+
   const stats = [
-    { value: "$200–$500", label: "Average Savings per Employee" },
-    { value: "PHCS PPO", label: "One of the Largest Networks in the Country" },
-    { value: "$0", label: "Cost for Your Coverage Review" },
+    { value: t("statsBar.value1"), label: t("statsBar.label1") },
+    { value: t("statsBar.value2"), label: t("statsBar.label2") },
+    { value: t("statsBar.value3"), label: t("statsBar.label3") },
   ];
 
   return (

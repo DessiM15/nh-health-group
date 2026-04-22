@@ -1,38 +1,32 @@
-const stats = [
-  {
-    value: "57%",
-    label: "Documented discount on in-network services",
-  },
-  {
-    value: "Largest PPO",
-    label: "PHCS Multi-Plan is one of the oldest & largest PPO networks in the US",
-  },
-  {
-    value: "In-Network",
-    label: "Check if your current doctor is already covered — most are",
-  },
-];
+"use client";
+
+import { useTranslation } from "@/lib/useTranslation";
 
 export default function NetworkSection() {
+  const { t } = useTranslation();
+
+  const stats = [
+    { value: t("network.stat1Value"), label: t("network.stat1Label") },
+    { value: t("network.stat2Value"), label: t("network.stat2Label") },
+    { value: t("network.stat3Value"), label: t("network.stat3Label") },
+  ];
+
   return (
     <section className="bg-white py-20 px-6">
       <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-14 items-center">
         {/* Left: Text */}
         <div className="reveal">
           <span className="font-display font-medium text-[0.8rem] uppercase tracking-widest text-[#C9A040]">
-            The Network
+            {t("network.eyebrow")}
           </span>
           <h2 className="font-display font-extrabold text-[#0F3F7A] text-3xl md:text-4xl mt-3 mb-5 leading-tight">
-            Access to One of the Largest PPO Networks in the Country
+            {t("network.heading")}
           </h2>
           <p className="font-body text-[#334155] text-[0.9375rem] leading-relaxed mb-5">
-            The Multi-Plan PHCS Network gives New Horizons clients access to a
-            massive nationwide PPO network — meaning your doctors, specialists,
-            and hospitals are likely already in-network.
+            {t("network.body1")}
           </p>
           <p className="font-body text-[#334155] text-[0.9375rem] leading-relaxed mb-5">
-            In-network repricing means you benefit from pre-negotiated rates — in
-            one documented case, a 57% discount was applied to services rendered.
+            {t("network.body2")}
           </p>
           <a
             href="https://www3.viiad.com/NewEraLife/member/choose.asp?msg=info(security.asp)"
@@ -40,7 +34,7 @@ export default function NetworkSection() {
             rel="noopener noreferrer"
             className="inline-block font-display font-semibold text-[#C9A040] underline underline-offset-4 decoration-[#C9A040] hover:text-[#A07C20] hover:decoration-[#A07C20] transition-colors text-[0.9375rem]"
           >
-            Check if your doctor is in-network →
+            {t("network.link")}
           </a>
         </div>
 
