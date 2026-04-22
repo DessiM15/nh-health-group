@@ -43,7 +43,7 @@ export default function Footer() {
             New Horizons Benefits Group
           </p>
           <p className="text-white/60 text-sm mt-1">
-            Rigo Cuellar | Independent Agent
+            Robert | Independent Agent
           </p>
           <p className="text-white/50 text-sm mt-1">
             202 S. Coleman Suite 200, Prosper, TX 75078

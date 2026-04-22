@@ -330,17 +330,51 @@ export default function FamilyGlitchCalculator() {
 
               {/* CTA */}
               <div className="mt-6 pt-4 border-t border-[#CBD5E1] text-center">
-                <p className="text-sm text-[#334155] font-body mb-4">
-                  {results.employeeEligible || results.familyEligible
-                    ? "Great news! Let us run a free, personalized savings review to find the best plan for you."
-                    : "Even if you don't qualify for subsidies, we may still find you better coverage at a lower cost."}
-                </p>
-                <a
-                  href="#lead-form"
-                  className="inline-block bg-[#C9A040] text-[#0F3F7A] font-display font-bold text-sm px-8 py-3.5 rounded-xl hover:bg-[#A07C20] transition-colors duration-200 shadow-md hover:shadow-lg"
-                >
-                  Get My Free Savings Review
-                </a>
+                {results.employeeEligible || results.familyEligible ? (
+                  <>
+                    <p className="text-sm text-[#334155] font-body mb-4">
+                      You may qualify for significant savings &mdash; Robert can
+                      walk you through your options.
+                    </p>
+                    <a
+                      href="tel:+14698312672"
+                      className="inline-flex items-center gap-2 bg-emerald-600 text-white font-display font-bold text-base px-8 py-4 rounded-xl hover:bg-emerald-700 transition-colors duration-200 shadow-md hover:shadow-lg"
+                    >
+                      <svg
+                        width="20"
+                        height="20"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      >
+                        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+                      </svg>
+                      Call Robert Now — (469) 831-2672
+                    </a>
+                    <a
+                      href="#lead-form"
+                      className="block mt-3 text-sm text-[#1A5FAF] font-display font-medium hover:text-[#C9A040] transition-colors"
+                    >
+                      Or fill out the form for a free review &rarr;
+                    </a>
+                  </>
+                ) : (
+                  <>
+                    <p className="text-sm text-[#334155] font-body mb-4">
+                      Even if you don&apos;t qualify for subsidies, we may still
+                      find you better coverage at a lower cost.
+                    </p>
+                    <a
+                      href="#lead-form"
+                      className="inline-block bg-[#C9A040] text-[#0F3F7A] font-display font-bold text-sm px-8 py-3.5 rounded-xl hover:bg-[#A07C20] transition-colors duration-200 shadow-md hover:shadow-lg"
+                    >
+                      Get My Free Savings Review
+                    </a>
+                  </>
+                )}
               </div>
             </div>
           )}

@@ -3,7 +3,9 @@
 import Navbar from "@/components/layout/Navbar";
 import Hero from "@/components/sections/Hero";
 import StatsBar from "@/components/sections/StatsBar";
+import CostCallout from "@/components/sections/CostCallout";
 import CoverageOptions from "@/components/sections/CoverageOptions";
+import FamilyComparison from "@/components/sections/FamilyComparison";
 import FamilyGlitchCalculator from "@/components/sections/FamilyGlitchCalculator";
 import NetworkSection from "@/components/sections/NetworkSection";
 import FeaturesSection from "@/components/sections/FeaturesSection";
@@ -22,7 +24,9 @@ export default function Home() {
       <Navbar />
       <Hero />
       <StatsBar />
+      <CostCallout />
       <CoverageOptions />
+      <FamilyComparison />
       <FamilyGlitchCalculator />
       <NetworkSection />
       <FeaturesSection />

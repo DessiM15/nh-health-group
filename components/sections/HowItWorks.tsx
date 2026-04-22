@@ -9,7 +9,7 @@ const steps = [
     number: "2",
     title: "We Compare Your Options",
     description:
-      "Rigo reviews your current coverage and pulls quotes from multiple carriers to find you real savings.",
+      "Robert reviews your current coverage and pulls quotes from multiple carriers to find you real savings.",
   },
   {
     number: "3",

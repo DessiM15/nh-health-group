@@ -7,7 +7,7 @@ const testimonials = [
     avatar:
       "https://ui-avatars.com/api/?name=David+K&background=1A5FAF&color=C9A040&bold=true&size=80",
     quote:
-      "I was spending a fortune on group coverage for my 12 employees. Rigo found us a level-funded plan that saved us over $2,000 a month. Same great coverage.",
+      "I was spending a fortune on group coverage for my 12 employees. Robert found us a level-funded plan that saved us over $2,000 a month. Same great coverage.",
   },
   {
     name: "Sarah M.",
@@ -15,7 +15,7 @@ const testimonials = [
     avatar:
       "https://ui-avatars.com/api/?name=Sarah+M&background=1A5FAF&color=C9A040&bold=true&size=80",
     quote:
-      "As a growing startup, I needed benefits that would help me attract talent without killing our runway. Rigo set us up with a plan that works for everyone.",
+      "As a growing startup, I needed benefits that would help me attract talent without killing our runway. Robert set us up with a plan that works for everyone.",
   },
   {
     name: "Robert L.",
