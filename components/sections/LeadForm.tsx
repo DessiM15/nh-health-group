@@ -179,7 +179,7 @@ export default function LeadForm() {
                   <span className="w-6 h-6 rounded-full bg-[#C9A040] text-[#0F3F7A] text-xs font-bold flex items-center justify-center">
                     2
                   </span>
-                  {t("leadForm.sectionHousehold")}
+                  {t("leadForm.sectionBusiness")}
                 </h3>
                 <div className="flex flex-col gap-4">
                   <div>

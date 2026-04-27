@@ -71,7 +71,7 @@ export default function Navbar() {
       className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
         scrolled || mobileOpen
           ? "bg-white shadow-[0_2px_20px_rgba(26,95,175,0.08)]"
-          : "bg-transparent"
+          : "bg-[#0F3F7A]/60 backdrop-blur-sm"
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 flex items-center justify-between h-[72px]">

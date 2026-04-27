@@ -7,7 +7,7 @@ export default function StatsBar() {
 
   const stats = [
     { value: t("statsBar.value1"), label: t("statsBar.label1") },
-    { value: t("statsBar.value2"), label: t("statsBar.label2"), subtitle: t("statsBar.subtitle2") },
+    { value: t("statsBar.value2"), label: t("statsBar.label2") },
     { value: t("statsBar.value3"), label: t("statsBar.label3") },
   ];
 
@@ -23,11 +23,6 @@ export default function StatsBar() {
               <p className="font-display font-medium text-[0.8rem] text-[#0F3F7A]/80 uppercase tracking-widest mt-1">
                 {stat.label}
               </p>
-              {stat.subtitle && (
-                <p className="font-display font-medium text-[0.7rem] text-[#0F3F7A]/60 uppercase tracking-widest mt-0.5">
-                  {stat.subtitle}
-                </p>
-              )}
             </div>
             {i < stats.length - 1 && (
               <div className="hidden md:block w-px h-14 bg-white/30" />
