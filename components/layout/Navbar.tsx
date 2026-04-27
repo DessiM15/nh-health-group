@@ -8,7 +8,6 @@ import { useTranslation } from "@/lib/useTranslation";
 
 const navLinkKeys = [
   { key: "navbar.coverage", href: "#coverage" },
-  { key: "navbar.calculator", href: "/calculator" },
   { key: "navbar.howItWorks", href: "#how-it-works" },
   { key: "navbar.reviews", href: "#testimonials" },
 ];

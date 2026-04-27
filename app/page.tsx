@@ -6,7 +6,7 @@ import StatsBar from "@/components/sections/StatsBar";
 import CostCallout from "@/components/sections/CostCallout";
 import CoverageOptions from "@/components/sections/CoverageOptions";
 import FamilyComparison from "@/components/sections/FamilyComparison";
-import FamilyGlitchCalculator from "@/components/sections/FamilyGlitchCalculator";
+import QuoteForm from "@/components/sections/QuoteForm";
 import NetworkSection from "@/components/sections/NetworkSection";
 import FeaturesSection from "@/components/sections/FeaturesSection";
 import WhoIsItFor from "@/components/sections/WhoIsItFor";
@@ -27,7 +27,7 @@ export default function Home() {
       <CostCallout />
       <CoverageOptions />
       <FamilyComparison />
-      <FamilyGlitchCalculator />
+      <QuoteForm />
       <NetworkSection />
       <FeaturesSection />
       <WhoIsItFor />

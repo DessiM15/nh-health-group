@@ -7,10 +7,11 @@ import {
   Zap,
   Plus,
   Award,
+  FileText,
 } from "lucide-react";
 import { useTranslation } from "@/lib/useTranslation";
 
-const cardIcons = [Building2, Heart, Shield, Zap, Plus, Award];
+const cardIcons = [Building2, Heart, Shield, Zap, Plus, Award, FileText];
 
 export default function CoverageOptions() {
   const { t } = useTranslation();
